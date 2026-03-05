@@ -1,13 +1,21 @@
-
 {
   "name": "SmartCalc Pro",
   "short_name": "SmartCalc",
   "description": "All-in-One Intelligent Calculator with full keyboard support",
-  "start_url": "/",
+  "start_url": "/aravindh-calculator/",
   "display": "standalone",
   "theme_color": "#4361ee",
   "background_color": "#f6f9fc",
   "icons": [
-    { "src": "assets/icon-192.png", "type": "image/png", "sizes": "192x192" }
+    {
+      "src": "assets/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
   ]
 }
