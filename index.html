@@ -1,0 +1,756 @@
+<!-- ==================== index.html ==================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ========== SEO META ========== -->
+  <link rel="icon" type="image/jpeg" href="assets/av logo.jpg">
+  <title>All in One Calculator by Aravindh V | Online Smart Calculator</title>
+  <meta name="description" content="All in One Calculator developed by Aravindh V. A smart online calculator with multiple calculation features.">
+  <meta name="keywords" content="calculator, GCD, LCM, prime checker, quadratic solver, mean median mode, 3x3 matrix multiplication, determinant, number base converter, GST calculator, CGPA converter, attendance calculator">
+  <meta name="author" content="Aravindh V">
+  <!-- Open Graph -->
+  <meta property="og:title" content="SmartCalc Pro – Advanced Math & Utility Suite">
+  <meta property="og:description" content="24+ advanced calculators: number theory, algebra, statistics, 3x3 matrices, engineering, finance, conversion, university tools.">
+  <meta property="og:image" content="https://smartcalc.pro/assets/og-preview.jpg">
+  <meta property="og:url" content="https://smartcalc.pro">
+  <meta property="og:type" content="website">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SmartCalc Pro">
+  <meta name="twitter:description" content="Advanced math calculators with 3x3 matrix operations">
+  <meta name="twitter:image" content="https://smartcalc.pro/assets/twitter-card.jpg">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.ico">
+  <!-- ========== FONTS & ICONS ========== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <!-- ========== STYLESHEET ========== -->
+  <link rel="stylesheet" href="style.css">
+  <!-- ========== STRUCTURED DATA (JSON-LD) ========== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SmartCalc Pro",
+    "description": "All-in-One Intelligent Calculator with 24+ advanced math tools. Full keyboard support, step-by-step solutions.",
+    "applicationCategory": "Utility",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Number theory, algebra, statistics, 3x3 matrices, finance, conversion, university tools"
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many calculators are included in this online calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This free All in One Online Calculator by Aravindh V includes 24+ advanced calculators covering number theory, algebra, statistics, 3x3 matrix operations, engineering, finance, conversion, and university tools."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this online calculator free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, this smart online calculator is completely free and accessible from any device."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+    <!-- Header -->
+<header class="navbar glass" role="banner">
+  <div class="nav-container">
+    <div class="logo">
+      <i class="fas fa-calculator"></i>
+      <div class="brand-title">SmartCalc Pro</div>
+    </div>
+    <div class="nav-controls">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button id="shortcutHelpBtn" class="icon-btn" aria-label="Keyboard shortcuts" title="Keyboard shortcuts (?)">
+        <i class="fas fa-keyboard"></i>
+      </button>
+      <button id="menuToggle" class="icon-btn mobile-menu" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- SEO Heading Section -->
+<section class="seo-heading">
+  <h1>All in One Calculator</h1>
+  <h2>Developed by Aravindh V</h2>
+</section>
+
+  <!-- Shortcut help modal -->
+  <div id="shortcutModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="shortcutTitle">
+    <div class="modal-content glass">
+      <span class="close-modal">&times;</span>
+      <h2 id="shortcutTitle">Keyboard Shortcuts</h2>
+      <div class="shortcut-grid">
+        <div class="shortcut-category">
+          <h3>Global</h3>
+          <ul>
+            <li><kbd>?</kbd> / <kbd>Shift</kbd>+<kbd>/</kbd> – Show help</li>
+            <li><kbd>Esc</kbd> – Close modal / Clear</li>
+            <li><kbd>Tab</kbd> – Navigate fields</li>
+          </ul>
+        </div>
+        <div class="shortcut-category">
+          <h3>Basic Calculator</h3>
+          <ul>
+            <li><kbd>0-9</kbd> – Numbers</li>
+            <li><kbd>+</kbd> <kbd>-</kbd> <kbd>*</kbd> <kbd>/</kbd> – Operators</li>
+            <li><kbd>.</kbd> – Decimal</li>
+            <li><kbd>Enter</kbd> / <kbd>=</kbd> – Equals</li>
+            <li><kbd>Backspace</kbd> – Delete last</li>
+            <li><kbd>Esc</kbd> – Clear</li>
+            <li><kbd>%</kbd> – Percentage</li>
+            <li><kbd>^</kbd> – Square (x²)</li>
+            <li><kbd>@</kbd> – Square root (√)</li>
+          </ul>
+        </div>
+        <div class="shortcut-category">
+          <h3>Scientific</h3>
+          <ul>
+            <li><kbd>s</kbd> – sin</li>
+            <li><kbd>c</kbd> – cos</li>
+            <li><kbd>t</kbd> – tan</li>
+            <li><kbd>l</kbd> – log</li>
+            <li><kbd>n</kbd> – ln</li>
+            <li><kbd>!</kbd> – factorial</li>
+            <li><kbd>r</kbd> – toggle DEG/RAD</li>
+            <li><kbd>p</kbd> – π (pi)</li>
+            <li><kbd>e</kbd> – exponent (e)</li>
+            <li><kbd>^</kbd> – power (x^y)</li>
+          </ul>
+        </div>
+        <div class="shortcut-category">
+          <h3>CGPA</h3>
+          <ul>
+            <li><kbd>Ctrl</kbd>+<kbd>S</kbd> – Save (localStorage)</li>
+            <li><kbd>Ctrl</kbd>+<kbd>R</kbd> – Reset semester (with confirm)</li>
+            <li><kbd>Enter</kbd> – Add subject (when focused)</li>
+            <li><kbd>Delete</kbd> – Remove selected subject</li>
+            <li><kbd>Tab</kbd> – Move between fields</li>
+          </ul>
+        </div>
+        <div class="shortcut-category">
+          <h3>All Calculators</h3>
+          <ul>
+            <li><kbd>Enter</kbd> – Calculate (when input focused)</li>
+            <li><kbd>Esc</kbd> – Clear</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-layout">
+    <!-- Sidebar navigation -->
+    <aside id="sidebar" class="sidebar glass" aria-label="Main navigation">
+      <nav>
+        <ul>
+          <li class="nav-section">Basic</li>
+          <li><a href="#" data-calc="basic" class="nav-link active"><i class="fas fa-calculator"></i><span>Basic</span></a></li>
+          <li><a href="#" data-calc="scientific" class="nav-link"><i class="fas fa-flask"></i><span>Scientific</span></a></li>
+          
+          <li class="nav-section">Advanced Math</li>
+          <li><a href="#" data-calc="number-theory" class="nav-link"><i class="fas fa-hashtag"></i><span>Number Theory</span></a></li>
+          <li><a href="#" data-calc="algebra" class="nav-link"><i class="fas fa-square-root-alt"></i><span>Algebra</span></a></li>
+          <li><a href="#" data-calc="statistics" class="nav-link"><i class="fas fa-chart-bar"></i><span>Statistics</span></a></li>
+          <li><a href="#" data-calc="matrices" class="nav-link"><i class="fas fa-th"></i><span>Matrices</span></a></li>
+          <li><a href="#" data-calc="base-converter" class="nav-link"><i class="fas fa-code"></i><span>Base Converter</span></a></li>
+          
+          <li class="nav-section">Finance</li>
+          <li><a href="#" data-calc="finance" class="nav-link"><i class="fas fa-coins"></i><span>Interest & GST</span></a></li>
+          
+          <li class="nav-section">Conversion</li>
+          <li><a href="#" data-calc="conversion" class="nav-link"><i class="fas fa-arrows-alt-h"></i><span>Units</span></a></li>
+          
+          <li class="nav-section">University Tools</li>
+          <li><a href="#" data-calc="university" class="nav-link"><i class="fas fa-university"></i><span>CGPA & Attendance</span></a></li>
+          
+          <li class="nav-section">Utilities</li>
+          <li><a href="#" data-calc="cgpa" class="nav-link"><i class="fas fa-graduation-cap"></i><span>CGPA (Semester)</span></a></li>
+          <li><a href="#" data-calc="percentage" class="nav-link"><i class="fas fa-percent"></i><span>Percentage</span></a></li>
+          <li><a href="#" data-calc="bmi" class="nav-link"><i class="fas fa-heartbeat"></i><span>BMI</span></a></li>
+          <li><a href="#" data-calc="emi" class="nav-link"><i class="fas fa-home"></i><span>EMI</span></a></li>
+          <li><a href="#" data-calc="age" class="nav-link"><i class="fas fa-birthday-cake"></i><span>Age</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="main-content" id="mainContent">
+      <!-- Basic Calculator -->
+<!-- Basic Calculator - Fixed Layout -->
+<div class="calc-card active-calc" id="basic-calc">
+  <h2><i class="fas fa-calculator"></i> Basic Calculator <span class="shortcut-hint"><i class="fas fa-keyboard"></i> keyboard ready</span></h2>
+  <div class="calc-display"><input type="text" id="basicDisplay" readonly placeholder="0" aria-label="Basic calculator display"></div>
+  <div class="keypad basic-keypad" role="group" aria-label="Basic calculator keypad">
+    <!-- Row 1: ( ) % AC -->
+    <button class="btn fn" data-key="(">(</button>
+    <button class="btn fn" data-key=")">)</button>
+    <button class="btn fn" data-key="%">%</button>
+    <button class="btn reset" data-key="Escape">AC</button>
+    
+    <!-- Row 2: 7 8 9 / -->
+    <button class="btn num" data-key="7">7</button>
+    <button class="btn num" data-key="8">8</button>
+    <button class="btn num" data-key="9">9</button>
+    <button class="btn op" data-key="/">/</button>
+    
+    <!-- Row 3: 4 5 6 * -->
+    <button class="btn num" data-key="4">4</button>
+    <button class="btn num" data-key="5">5</button>
+    <button class="btn num" data-key="6">6</button>
+    <button class="btn op" data-key="*">*</button>
+    
+    <!-- Row 4: 1 2 3 - -->
+    <button class="btn num" data-key="1">1</button>
+    <button class="btn num" data-key="2">2</button>
+    <button class="btn num" data-key="3">3</button>
+    <button class="btn op" data-key="-">-</button>
+    
+    <!-- Row 5: 0 . = + -->
+    <button class="btn num" data-key="0">0</button>
+    <button class="btn num" data-key=".">.</button>
+    <button class="btn eq" data-key="Enter">=</button>
+    <button class="btn op" data-key="+">+</button>
+  </div>
+  <div class="keyboard-hint"><i class="fas fa-lightbulb"></i> Try keyboard: numbers, operators, Enter, Backspace, Esc, ( ) brackets</div>
+</div>
+
+      <!-- Scientific Calculator -->
+<div class="calc-card" id="scientific-calc">
+  <h2><i class="fas fa-flask"></i> Scientific <span class="badge" id="degRadBadge" tabindex="0" role="button" aria-pressed="true">DEG</span></h2>
+  <div class="calc-display"><input type="text" id="sciDisplay" readonly placeholder="0" aria-label="Scientific calculator display"></div>
+  <div class="keypad sci-keypad" role="group" aria-label="Scientific calculator keypad">
+    <!-- Row 1 -->
+    <button class="btn fn" data-key="(">(</button>
+    <button class="btn fn" data-key=")">)</button>
+    <button class="btn num" data-key="7">7</button>
+    <button class="btn num" data-key="8">8</button>
+    <button class="btn num" data-key="9">9</button>
+    
+    <!-- Row 2 -->
+    <button class="btn op" data-key="/">/</button>
+    <button class="btn fn" data-key="s">sin</button>
+    <button class="btn num" data-key="4">4</button>
+    <button class="btn num" data-key="5">5</button>
+    <button class="btn num" data-key="6">6</button>
+    
+    <!-- Row 3 -->
+    <button class="btn op" data-key="*">*</button>
+    <button class="btn fn" data-key="c">cos</button>
+    <button class="btn num" data-key="1">1</button>
+    <button class="btn num" data-key="2">2</button>
+    <button class="btn num" data-key="3">3</button>
+    
+    <!-- Row 4 -->
+    <button class="btn op" data-key="-">-</button>
+    <button class="btn fn" data-key="t">tan</button>
+    <button class="btn num" data-key="0">0</button>
+    <button class="btn num" data-key=".">.</button>
+    <button class="btn fn" data-key="n">ln</button>
+    
+    <!-- Row 5 -->
+    <button class="btn op" data-key="+">+</button>
+    <button class="btn fn" data-key="l">log</button>
+    <button class="btn fn" data-key="^">x^y</button>
+    <button class="btn fn" data-key="!">n!</button>
+    <button class="btn fn" data-key="e">e</button>
+    
+    <!-- Row 6 -->
+    <button class="btn fn" data-key="π">π</button>
+    <button class="btn reset" data-key="Escape">C</button>
+    <button class="btn eq" data-key="Enter" colspan="2">=</button>
+  </div>
+  <div class="keyboard-hint"><i class="fas fa-keyboard"></i> s=sin, c=cos, t=tan, l=log, n=ln, !=fact, r=deg/rad, p=π, ( ) brackets</div>
+</div>
+
+      <!-- CGPA Calculator -->
+      <div class="calc-card" id="cgpa-calc">
+        <h2><i class="fas fa-graduation-cap"></i> CGPA Analytics <span class="shortcut-hint"><i class="fas fa-keyboard"></i> Ctrl+S save, Ctrl+R reset</span></h2>
+        <div class="cgpa-container">
+          <div class="semester-tabs" id="semTabs"></div>
+          <div id="semestersArea"></div>
+          <button id="addSemBtn" class="action-btn"><i class="fas fa-plus"></i> Add Semester</button>
+          <div class="cgpa-metrics">
+            <div class="metric"><span>CGPA</span> <span class="animated-number" id="cgpaFinal">0.00</span></div>
+            <div class="metric"><span>Total Credits</span> <span id="totalCredits">0</span></div>
+          </div>
+          <div class="chart-container">
+            <canvas id="cgpaChart" width="400" height="200"></canvas>
+          </div>
+          <div class="cgpa-actions">
+            <button id="resetCgpa" class="reset-btn"><i class="fas fa-undo"></i> Reset</button>
+            <button id="exportCgpaPdf" class="action-btn"><i class="fas fa-download"></i> PDF Report</button>
+            <button id="saveCgpaLocal" class="action-btn"><i class="fas fa-save"></i> Save (Ctrl+S)</button>
+          </div>
+          <p class="formula">CGPA = (Σ Credit × Grade Point) / Σ Credits</p>
+        </div>
+      </div>
+
+      <!-- Percentage Calculator -->
+      <div class="calc-card" id="percentage-calc">
+        <h2><i class="fas fa-percent"></i> Percentage</h2>
+        <div class="input-group"><input type="number" id="percValue" placeholder="Value"> <span>is what % of</span> <input type="number" id="percTotal" placeholder="Total"></div>
+        <button id="percCalc" class="action-btn"><i class="fas fa-equals"></i> Calculate</button>
+        <p>Result: <strong class="animated-number" id="percResult">0.00%</strong></p>
+        <button class="reset-btn reset">Reset</button>
+        <div class="keyboard-hint">Press Enter to calculate, Esc to clear</div>
+      </div>
+
+      <!-- BMI Calculator -->
+      <div class="calc-card" id="bmi-calc">
+        <h2><i class="fas fa-heartbeat"></i> BMI Calculator</h2>
+        <div class="input-group"><input type="number" id="bmiWeight" placeholder="Weight (kg)"> <input type="number" id="bmiHeight" placeholder="Height (cm)"></div>
+        <button id="bmiCalc" class="action-btn">Calculate BMI</button>
+        <p>BMI: <strong class="animated-number" id="bmiValue">0.00</strong> <span id="bmiCategory">-</span></p>
+        <button class="reset-btn reset">Reset</button>
+      </div>
+
+      <!-- EMI Calculator -->
+      <div class="calc-card" id="emi-calc">
+        <h2><i class="fas fa-home"></i> EMI Calculator</h2>
+        <div class="input-group"><input type="number" id="emiAmount" placeholder="Loan amount"> <input type="number" id="emiRate" placeholder="Annual rate %"> <input type="number" id="emiYears" placeholder="Years"></div>
+        <button id="emiCalc" class="action-btn">Calculate EMI</button>
+        <p>Monthly EMI: <strong class="animated-number" id="emiResult">0.00</strong></p>
+        <button class="reset-btn reset">Reset</button>
+      </div>
+
+      <!-- Age Calculator -->
+      <div class="calc-card" id="age-calc">
+        <h2><i class="fas fa-birthday-cake"></i> Age Calculator</h2>
+        <div class="input-group"><label>Birth date: <input type="date" id="ageBirth"></label></div>
+        <button id="ageCalc" class="action-btn">Calculate Age</button>
+        <p><span id="ageYears">0</span> years, <span id="ageMonths">0</span> months, <span id="ageDays">0</span> days</p>
+        <button class="reset-btn reset">Reset</button>
+      </div>
+
+      <!-- Number Theory -->
+      <div class="calc-card" id="number-theory-calc">
+        <h2><i class="fas fa-hashtag"></i> Number Theory</h2>
+        <div class="advanced-grid">
+          <div class="sub-calc">
+            <h3>GCD & LCM</h3>
+            <div class="input-group"><input type="number" id="gcdA" placeholder="Number A" value="12"> <input type="number" id="gcdB" placeholder="Number B" value="18"></div>
+            <button id="calcGcdLcm" class="action-btn">Calculate</button>
+            <p>GCD: <strong id="gcdResult">6</strong><br>LCM: <strong id="lcmResult">36</strong></p>
+            <p class="formula">GCD(a,b) via Euclidean; LCM = a×b / GCD</p>
+          </div>
+          <div class="sub-calc">
+            <h3>Prime Checker</h3>
+            <input type="number" id="primeNum" placeholder="Enter number" value="17">
+            <button id="checkPrime" class="action-btn">Check</button>
+            <p id="primeResult">17 is prime</p>
+          </div>
+          <div class="sub-calc">
+            <h3>Prime Factorization</h3>
+            <input type="number" id="factorNum" placeholder="Enter number" value="84">
+            <button id="factorize" class="action-btn">Factorize</button>
+            <p id="factorResult">84 = 2² × 3 × 7</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Algebra -->
+      <div class="calc-card" id="algebra-calc">
+        <h2><i class="fas fa-square-root-alt"></i> Algebra</h2>
+        <div class="advanced-grid">
+          <div class="sub-calc">
+            <h3>Quadratic Solver</h3>
+            <p>ax² + bx + c = 0</p>
+            <div><input type="number" id="quadA" placeholder="a" value="1"> <input type="number" id="quadB" placeholder="b" value="5"> <input type="number" id="quadC" placeholder="c" value="6"></div>
+            <button id="solveQuad" class="action-btn">Solve</button>
+            <p id="quadResult">x₁ = -2, x₂ = -3</p>
+            <p id="quadDiscriminant">Δ = 1</p>
+          </div>
+          <div class="sub-calc">
+            <h3>Linear Solver</h3>
+            <p>ax + b = 0</p>
+            <div><input type="number" id="linearA" placeholder="a" value="2"> <input type="number" id="linearB" placeholder="b" value="-8"></div>
+            <button id="solveLinear" class="action-btn">Solve</button>
+            <p id="linearResult">x = 4</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistics Calculator (Individual Inputs) -->
+      <div class="calc-card" id="statistics-calc">
+        <h2><i class="fas fa-chart-bar"></i> Statistics Calculator</h2>
+        <div class="statistics-container">
+          <!-- Dynamic Number Input Section -->
+          <div class="number-input-section">
+            <div class="section-header">
+              <h3>Enter Numbers</h3>
+              <div class="input-controls">
+                <button id="addNumberField" class="action-btn small">
+                  <i class="fas fa-plus"></i> Add Number
+                </button>
+                <button id="resetNumberFields" class="reset-btn small">
+                  <i class="fas fa-undo"></i> Reset
+                </button>
+              </div>
+            </div>
+            
+            <div id="numberFieldsContainer" class="number-fields-grid">
+              <!-- Dynamic number fields will be added here -->
+            </div>
+            
+            <div class="input-summary">
+              <span>Total Numbers: <strong id="totalNumbersCount">3</strong></span>
+              <span>Current Sum: <strong id="currentSum">0.00</strong></span>
+            </div>
+          </div>
+
+          <!-- Individual Statistics Buttons -->
+          <div class="statistics-grid">
+            <!-- Mean -->
+            <div class="stat-card">
+              <div class="stat-icon">📊</div>
+              <h3>Mean (Average)</h3>
+              <div class="stat-result" id="meanResult">—</div>
+              <button id="calcMean" class="stat-btn">Calculate Mean</button>
+              <div class="stat-formula">x̄ = Σx / n</div>
+            </div>
+
+            <!-- Median -->
+            <div class="stat-card">
+              <div class="stat-icon">📈</div>
+              <h3>Median</h3>
+              <div class="stat-result" id="medianResult">—</div>
+              <button id="calcMedian" class="stat-btn">Calculate Median</button>
+              <div class="stat-formula">Middle value (sorted)</div>
+            </div>
+
+            <!-- Mode -->
+            <div class="stat-card">
+              <div class="stat-icon">🔢</div>
+              <h3>Mode</h3>
+              <div class="stat-result" id="modeResult">—</div>
+              <button id="calcMode" class="stat-btn">Calculate Mode</button>
+              <div class="stat-formula">Most frequent value(s)</div>
+            </div>
+
+            <!-- Variance -->
+            <div class="stat-card">
+              <div class="stat-icon">📉</div>
+              <h3>Variance</h3>
+              <div class="stat-result" id="varianceResult">—</div>
+              <button id="calcVariance" class="stat-btn">Calculate Variance</button>
+              <div class="stat-formula">σ² = Σ(x - μ)² / n</div>
+            </div>
+
+            <!-- Standard Deviation -->
+            <div class="stat-card">
+              <div class="stat-icon">📏</div>
+              <h3>Standard Deviation</h3>
+              <div class="stat-result" id="stdDevResult">—</div>
+              <button id="calcStdDev" class="stat-btn">Calculate Std Dev</button>
+              <div class="stat-formula">σ = √(variance)</div>
+            </div>
+
+            <!-- All Statistics -->
+            <div class="stat-card all-stats">
+              <div class="stat-icon">⚡</div>
+              <h3>All Statistics</h3>
+              <div class="stat-result" id="allStatsResult">Click to calculate all</div>
+              <button id="calcAllStats" class="stat-btn primary">Calculate All</button>
+              <div class="stat-formula">Complete analysis</div>
+            </div>
+          </div>
+
+          <!-- Data Summary Section -->
+          <div class="data-summary">
+            <h3>Data Analysis</h3>
+            <div class="summary-grid">
+              <div class="summary-item">
+                <span class="summary-label">Count (n):</span>
+                <span class="summary-value" id="dataCount">3</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-label">Sum:</span>
+                <span class="summary-value" id="dataSum">0.00</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-label">Minimum:</span>
+                <span class="summary-value" id="dataMin">0.00</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-label">Maximum:</span>
+                <span class="summary-value" id="dataMax">0.00</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-label">Range:</span>
+                <span class="summary-value" id="dataRange">0.00</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-label">Sorted Data:</span>
+                <span class="summary-value" id="dataSorted">—</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Matrix Calculator -->
+      <div class="calc-card" id="matrices-calc">
+        <h2><i class="fas fa-th"></i> Matrix Calculator</h2>
+        <div class="matrix-dimension-panel">
+          <div class="dimension-controls">
+            <div class="dimension-box">
+              <label>Matrix A</label>
+              <div class="dimension-selector">
+                <select id="matrixARows" class="dim-select">
+                  <option value="1">1</option>
+                  <option value="2" selected>2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+                <span>×</span>
+                <select id="matrixACols" class="dim-select">
+                  <option value="1">1</option>
+                  <option value="2" selected>2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="dimension-box">
+              <label>Matrix B</label>
+              <div class="dimension-selector">
+                <select id="matrixBRows" class="dim-select">
+                  <option value="1">1</option>
+                  <option value="2" selected>2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+                <span>×</span>
+                <select id="matrixBCols" class="dim-select">
+                  <option value="1">1</option>
+                  <option value="2" selected>2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+            
+            <button id="updateMatrices" class="action-btn">
+              <i class="fas fa-sync-alt"></i> Update
+            </button>
+          </div>
+        </div>
+
+        <div class="matrices-container">
+          <!-- Matrix A -->
+          <div class="matrix-structure">
+            <div class="matrix-header">
+              <h3>Matrix A</h3>
+              <span class="matrix-badge" id="matrixABadge">2×2</span>
+            </div>
+            <div class="matrix-brackets">
+              <div class="matrix-left-bracket">⎡</div>
+              <div id="matrixAInput" class="matrix-grid"></div>
+              <div class="matrix-right-bracket">⎤</div>
+            </div>
+          </div>
+
+          <!-- Matrix B -->
+          <div class="matrix-structure">
+            <div class="matrix-header">
+              <h3>Matrix B</h3>
+              <span class="matrix-badge" id="matrixBBadge">2×2</span>
+            </div>
+            <div class="matrix-brackets">
+              <div class="matrix-left-bracket">⎡</div>
+              <div id="matrixBInput" class="matrix-grid"></div>
+              <div class="matrix-right-bracket">⎤</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="matrix-operations-panel">
+          <h3>Operations</h3>
+          <div class="operation-buttons">
+            <button id="addMatrices" class="op-btn">
+              <i class="fas fa-plus"></i> A + B
+            </button>
+            <button id="subtractMatrices" class="op-btn">
+              <i class="fas fa-minus"></i> A - B
+            </button>
+            <button id="multiplyMatrices" class="op-btn">
+              <i class="fas fa-times"></i> A × B
+            </button>
+            <button id="transposeMatrixA" class="op-btn">
+              <i class="fas fa-arrows-alt-v"></i> Aᵀ
+            </button>
+            <button id="transposeMatrixB" class="op-btn">
+              <i class="fas fa-arrows-alt-v"></i> Bᵀ
+            </button>
+            <button id="determinantMatrix" class="op-btn">
+              <i class="fas fa-calculator"></i> det(A)
+            </button>
+          </div>
+        </div>
+
+        <div class="matrix-result-panel">
+          <h3>Result</h3>
+          <div class="matrix-brackets">
+            <div class="matrix-left-bracket">⎡</div>
+            <div id="matrixResult" class="matrix-grid result-grid"></div>
+            <div class="matrix-right-bracket">⎤</div>
+          </div>
+          <div id="matrixMessage" class="matrix-message"></div>
+        </div>
+      </div>
+
+      <!-- Base Converter -->
+      <div class="calc-card" id="base-converter-calc">
+        <h2><i class="fas fa-code"></i> Number Base Converter</h2>
+        <div class="sub-calc">
+          <input type="text" id="baseInput" placeholder="Enter number" value="255">
+          <select id="baseFrom">
+            <option value="2">Binary</option>
+            <option value="8">Octal</option>
+            <option value="10" selected>Decimal</option>
+            <option value="16">Hexadecimal</option>
+          </select>
+          <span> → </span>
+          <select id="baseTo">
+            <option value="2">Binary</option>
+            <option value="8">Octal</option>
+            <option value="10">Decimal</option>
+            <option value="16" selected>Hexadecimal</option>
+          </select>
+          <button id="convertBase" class="action-btn">Convert</button>
+          <p id="baseResult">255 decimal = FF hex</p>
+        </div>
+      </div>
+
+      <!-- Finance -->
+      <div class="calc-card" id="finance-calc">
+        <h2><i class="fas fa-coins"></i> Finance Calculators</h2>
+        <div class="advanced-grid">
+          <div class="sub-calc">
+            <h3>Simple Interest</h3>
+            <input type="number" id="siPrincipal" placeholder="Principal" value="1000">
+            <input type="number" id="siRate" placeholder="Rate %" value="5">
+            <input type="number" id="siTime" placeholder="Time (years)" value="2">
+            <button id="calcSI" class="action-btn">Calculate</button>
+            <p id="siResult">Interest = 100, Amount = 1100</p>
+          </div>
+          <div class="sub-calc">
+            <h3>Compound Interest</h3>
+            <input type="number" id="ciPrincipal" placeholder="Principal" value="1000">
+            <input type="number" id="ciRate" placeholder="Rate %" value="5">
+            <input type="number" id="ciTime" placeholder="Years" value="2">
+            <input type="number" id="ciN" placeholder="Compounds/year" value="1">
+            <button id="calcCI" class="action-btn">Calculate</button>
+            <p id="ciResult">Amount = 1102.50, Interest = 102.50</p>
+          </div>
+          <div class="sub-calc">
+            <h3>GST Calculator</h3>
+            <input type="number" id="gstAmount" placeholder="Amount" value="1000">
+            <input type="number" id="gstRate" placeholder="GST %" value="18">
+            <button id="calcGST" class="action-btn">Calculate</button>
+            <p id="gstResult">GST = 180, Total = 1180</p>
+          </div>
+          <div class="sub-calc">
+            <h3>Discount</h3>
+            <input type="number" id="discOriginal" placeholder="Original price" value="2000">
+            <input type="number" id="discPercent" placeholder="Discount %" value="15">
+            <button id="calcDiscount" class="action-btn">Calculate</button>
+            <p id="discResult">Discount = 300, Final = 1700</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unit Conversion -->
+      <div class="calc-card" id="conversion-calc">
+        <h2><i class="fas fa-arrows-alt-h"></i> Unit Converter</h2>
+        <div class="advanced-grid">
+          <div class="sub-calc">
+            <h3>Length (meters ↔ feet)</h3>
+            <input type="number" id="lengthM" placeholder="Meters" value="10"> <span>=</span> <input type="number" id="lengthFt" placeholder="Feet" value="32.8084">
+            <button id="convertLength" class="action-btn">Convert</button>
+          </div>
+          <div class="sub-calc">
+            <h3>Weight (kg ↔ lbs)</h3>
+            <input type="number" id="weightKg" placeholder="Kilograms" value="10"> <span>=</span> <input type="number" id="weightLb" placeholder="Pounds" value="22.0462">
+            <button id="convertWeight" class="action-btn">Convert</button>
+          </div>
+          <div class="sub-calc">
+            <h3>Temperature (°C ↔ °F)</h3>
+            <input type="number" id="tempC" placeholder="Celsius" value="0"> <span>=</span> <input type="number" id="tempF" placeholder="Fahrenheit" value="32">
+            <button id="convertTemp" class="action-btn">Convert</button>
+          </div>
+          <div class="sub-calc">
+            <h3>Data (MB ↔ GB)</h3>
+            <input type="number" id="dataMB" placeholder="Megabytes" value="1024"> <span>=</span> <input type="number" id="dataGB" placeholder="Gigabytes" value="1">
+            <button id="convertData" class="action-btn">Convert</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- University Tools -->
+      <div class="calc-card" id="university-calc">
+        <h2><i class="fas fa-university"></i> University Tools</h2>
+        <div class="advanced-grid">
+          <div class="sub-calc">
+            <h3>Percentage to CGPA</h3>
+            <input type="number" id="percToCgpa" placeholder="Percentage" value="85">
+            <button id="convertPercToCgpa" class="action-btn">Convert</button>
+            <p id="percToCgpaResult">CGPA = 9.0 (10-point scale)</p>
+          </div>
+          <div class="sub-calc">
+            <h3>CGPA to Percentage</h3>
+            <input type="number" id="cgpaToPerc" placeholder="CGPA" value="9.0">
+            <button id="convertCgpaToPerc" class="action-btn">Convert</button>
+            <p id="cgpaToPercResult">Percentage = 85.5%</p>
+          </div>
+          <div class="sub-calc">
+            <h3>Attendance Calculator</h3>
+            <input type="number" id="attnPresent" placeholder="Classes attended" value="25">
+            <input type="number" id="attnTotal" placeholder="Total classes" value="30">
+            <button id="calcAttendance" class="action-btn">Calculate</button>
+            <p id="attnResult">Attendance = 83.33% (✅ sufficient)</p>
+          </div>
+          <div class="sub-calc">
+            <h3>Internal Marks Calculator</h3>
+            <input type="number" id="internalMax" placeholder="Max internal" value="40">
+            <input type="number" id="internalScored" placeholder="Scored" value="35">
+            <button id="calcInternal" class="action-btn">Calculate</button>
+            <p id="internalResult">Percentage = 87.5%</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
