@@ -1,4 +1,4 @@
-# ========== robots.txt ==========
 User-agent: *
 Allow: /
-Sitemap: https://smartcalc.pro/sitemap.xml
+
+Sitemap: https://aravindh2727.github.io/sitemap.xml
